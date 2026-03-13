@@ -1,4 +1,4 @@
-/* base.css — Ius Gentium UFSC */
+/* base.css — Reset + base styles */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
