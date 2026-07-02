@@ -1,0 +1,20 @@
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Node (Jekyll tooling lives in workflow, not here)
+node_modules/
+package-lock.json
+bun.lockb
+
+# Side experiments
+hatch-pet-alegoria-run/
+
+# Build artifacts
+_site/
+.jekyll-cache/
+.jekyll-metadata

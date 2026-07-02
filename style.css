@@ -2476,3 +2476,956 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ========================================
+   IUS GENTIUM — HIFI REDESIGN (Premium)
+   Appended 2026-06-23 from /Users/ana/Desktop/design_handoff_site
+   ======================================== */
+
+/* ---------- Accent token + warm band ---------- */
+:root {
+  --ig-accent: #BFA37A;
+  --ig-accent-soft: #BFA37A14;
+  --ig-band: #F7F4ED;
+  --ig-border: #ece6da;
+  --ig-border-strong: #e4ddcd;
+  --ig-frame: #ddd5c4;
+  --ig-text-2: #4a5360;
+  --ig-text-3: #5a6470;
+  --ig-text-faint: #9a9384;
+  --ig-ink: #0F1A24;
+  --ig-shadow-plate: 0 30px 60px -34px rgba(15, 26, 36, 0.45);
+  --ig-shadow-card: 0 24px 48px -28px rgba(15, 26, 36, 0.18);
+}
+
+.ig-band {
+  background: var(--ig-band);
+  border-top: 1px solid var(--ig-border);
+  border-bottom: 1px solid var(--ig-border);
+}
+
+/* ---------- Page header (eyebrow + huge serif title + 2px ink rule) ---------- */
+.ig-page {
+  padding: 72px 44px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.ig-page__eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ig-accent);
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.ig-page__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  font-weight: 600;
+  margin: 0 0 20px;
+  line-height: 1;
+  letter-spacing: -0.015em;
+  color: var(--ig-ink);
+  max-width: 920px;
+}
+.ig-rule {
+  height: 2px;
+  background: var(--ig-ink);
+  margin: 0;
+}
+.ig-rule--accent {
+  background: var(--ig-accent);
+}
+.ig-lead {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--ig-text-2);
+  margin: 36px auto 0;
+  max-width: 720px;
+  padding: 0 44px;
+}
+.ig-lead--wide { max-width: 1020px; }
+.ig-prose {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--ig-text-3);
+  margin: 22px auto 0;
+  max-width: 720px;
+  padding: 0 44px;
+}
+.ig-prose--wide { max-width: 1020px; }
+
+/* ---------- Section spacing helpers ---------- */
+.ig-section {
+  padding: 80px 44px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.ig-section--narrow { max-width: 980px; }
+.ig-section--text { max-width: 720px; }
+.ig-section--bleed { max-width: 100%; padding-left: 0; padding-right: 0; }
+
+/* ---------- Justitia plate (hero crossfade) ---------- */
+.ig-plate {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: #fff;
+  padding: 14px;
+  border: 1px solid var(--ig-frame);
+  box-shadow: var(--ig-shadow-plate);
+}
+.ig-plate__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--ig-accent);
+  overflow: hidden;
+  background: #f3efe6;
+}
+.ig-plate__layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1.4s ease;
+}
+.ig-plate__layer.is-active { opacity: 1; }
+.ig-plate__caption {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--ig-text-faint);
+  margin-top: 12px;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Hero (Início) ---------- */
+.ig-hero {
+  display: grid;
+  grid-template-columns: 1.04fr 0.96fr;
+  gap: 64px;
+  align-items: center;
+  padding: 84px 44px 92px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.ig-hero__eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ig-accent);
+  font-weight: 600;
+  margin-bottom: 26px;
+  line-height: 1.5;
+  max-width: 520px;
+}
+.ig-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(3.4rem, 6vw, 5.6rem);
+  font-weight: 600;
+  color: var(--ig-ink);
+  line-height: 0.96;
+  letter-spacing: -0.015em;
+  margin: 0 0 22px;
+}
+.ig-hero__subtitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+  line-height: 1.45;
+  color: var(--ig-text-2);
+  margin: 0 0 22px;
+  max-width: 480px;
+}
+.ig-hero__rule {
+  width: 54px;
+  height: 2px;
+  background: var(--ig-accent);
+  margin: 0 0 24px;
+}
+.ig-hero__desc {
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: var(--ig-text-3);
+  margin: 0 0 34px;
+  max-width: 430px;
+}
+.ig-hero__desc em {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--ig-text-2);
+}
+.ig-hero__ctas {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  flex-wrap: wrap;
+}
+.ig-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  padding: 14px 28px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 200ms ease, color 200ms ease, border-color 200ms ease;
+}
+.ig-btn--solid {
+  background: var(--ig-ink);
+  color: var(--color-bg);
+}
+.ig-btn--solid:hover { background: #1d2c3a; }
+.ig-btn--ghost {
+  background: transparent;
+  color: var(--ig-ink);
+  font-weight: 600;
+  border-bottom: 2px solid var(--ig-accent);
+  padding: 0 0 3px;
+  border-radius: 0;
+}
+.ig-btn--ghost:hover { color: var(--ig-accent); }
+.ig-btn--accent {
+  background: var(--ig-accent);
+  color: var(--ig-ink);
+  font-family: var(--font-display);
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 15px 30px;
+}
+.ig-btn--accent:hover { background: var(--color-bg); }
+
+/* ---------- Marcos de prestígio (3 cards) ---------- */
+.ig-marcos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 2px solid var(--ig-ink);
+  margin-top: 12px;
+}
+.ig-marco {
+  padding: 28px 26px 32px;
+  border-right: 1px solid var(--ig-border-strong);
+  border-bottom: 1px solid var(--ig-border-strong);
+}
+.ig-marco:last-child { border-right: none; }
+.ig-marco__label {
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ig-text-faint);
+  margin-bottom: 14px;
+}
+.ig-marco__title {
+  font-family: var(--font-display);
+  font-size: 23px;
+  font-weight: 600;
+  margin: 0 0 12px;
+  color: var(--ig-ink);
+  line-height: 1.15;
+}
+.ig-marco__body {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--ig-text-3);
+  margin: 0;
+}
+
+/* ---------- Cânone list (3 rows: year + name + work) ---------- */
+.ig-canon {
+  border-top: 2px solid var(--ig-ink);
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 44px;
+}
+.ig-canon__row {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 8px 30px;
+  padding: 24px 4px;
+  border-bottom: 1px solid var(--ig-border-strong);
+}
+.ig-canon__year {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--ig-accent);
+}
+.ig-canon__name {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--ig-ink);
+  margin: 0 0 5px;
+}
+.ig-canon__name span { font-style: normal; }
+.ig-canon__body {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ig-text-3);
+  margin: 0;
+}
+
+/* ---------- Latim band ---------- */
+.ig-latin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 40px 0 0;
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ig-text-faint);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.ig-latin span.dot { color: var(--ig-accent); }
+
+/* ---------- Photo break with quote ---------- */
+.ig-photobreak {
+  position: relative;
+  height: 520px;
+  overflow: hidden;
+}
+.ig-photobreak__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ig-photobreak__veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 26, 36, 0.78) 0%, rgba(15, 26, 36, 0.42) 45%, rgba(15, 26, 36, 0.82) 100%);
+}
+.ig-photobreak__inner {
+  position: relative;
+  max-width: 860px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 44px;
+}
+.ig-photobreak__quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  line-height: 1.5;
+  color: #f4efe6;
+  margin: 18px 0 20px;
+}
+.ig-photobreak__mark {
+  font-family: var(--font-display);
+  font-size: 44px;
+  color: var(--ig-accent);
+  line-height: 0;
+}
+.ig-photobreak__attr {
+  font-size: 11.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #c2b79c;
+}
+
+/* ---------- Teaser band (cta card) ---------- */
+.ig-teaser {
+  background: var(--ig-ink);
+  color: #dfe5ea;
+  padding: 54px 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 80px auto 90px;
+}
+.ig-teaser__eyebrow {
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ig-accent);
+  margin-bottom: 12px;
+}
+.ig-teaser__title {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0 0 12px;
+  color: var(--color-bg);
+}
+.ig-teaser__body {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: #a9b3bd;
+  margin: 0;
+  max-width: 560px;
+}
+
+/* ---------- Research axes (4 numbered cards) ---------- */
+.ig-eixos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  border-top: 2px solid var(--ig-ink);
+  border-left: 1px solid var(--ig-border-strong);
+  max-width: 1020px;
+  margin: 18px auto 0;
+}
+.ig-eixo {
+  padding: 28px 26px 30px;
+  border-right: 1px solid var(--ig-border-strong);
+  border-bottom: 1px solid var(--ig-border-strong);
+}
+.ig-eixo__n {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--ig-accent);
+  margin-bottom: 8px;
+}
+.ig-eixo__title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--ig-ink);
+  margin: 0 0 10px;
+  line-height: 1.15;
+}
+.ig-eixo__body {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ig-text-3);
+  margin: 0;
+}
+
+/* ---------- Gerações: papéis ---------- */
+.ig-papeis {
+  border-top: 2px solid var(--ig-ink);
+  max-width: 920px;
+  margin: 0 auto;
+}
+.ig-papel {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 6px 30px;
+  padding: 26px 4px;
+  border-bottom: 1px solid var(--ig-border-strong);
+}
+.ig-papel__role {
+  font-family: var(--font-display);
+  font-size: 23px;
+  font-weight: 600;
+  color: var(--ig-ink);
+  line-height: 1.1;
+}
+.ig-papel__who {
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #a59c8a;
+  margin-top: 6px;
+}
+.ig-papel__desc {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--ig-text-3);
+  margin: 0;
+  align-self: center;
+}
+
+/* ---------- Trajetória (2x2 grid) ---------- */
+.ig-traj {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 2px solid var(--ig-ink);
+  border-left: 1px solid var(--ig-border-strong);
+  max-width: 1020px;
+  margin: 0 auto;
+}
+.ig-traj__item {
+  padding: 26px 24px;
+  border-right: 1px solid var(--ig-border-strong);
+  border-bottom: 1px solid var(--ig-border-strong);
+}
+.ig-traj__area {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ig-ink);
+  margin: 0 0 6px;
+}
+.ig-traj__desc {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--ig-text-3);
+  margin: 0;
+}
+
+/* ---------- Produção: lista + estante ---------- */
+.ig-prod {
+  border-top: 2px solid var(--ig-ink);
+  max-width: 920px;
+  margin: 0 auto;
+}
+.ig-prod__row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 6px 30px;
+  padding: 28px 4px;
+  border-bottom: 1px solid var(--ig-border-strong);
+}
+.ig-prod__tag {
+  font-family: var(--font-display);
+  font-size: 19px;
+  color: var(--ig-text-faint);
+}
+.ig-prod__title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--ig-ink);
+  margin: 0 0 6px;
+}
+.ig-prod__body {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ig-text-3);
+  margin: 0;
+}
+
+/* ---------- Rede transatlântica (3 colunas) ---------- */
+.ig-rede {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 2px solid var(--ig-ink);
+  border-left: 1px solid var(--ig-border-strong);
+  max-width: 1020px;
+  margin: 0 auto;
+}
+.ig-rede__cell {
+  padding: 24px 22px;
+  border-right: 1px solid var(--ig-border-strong);
+  border-bottom: 1px solid var(--ig-border-strong);
+}
+.ig-rede__city {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ig-ink);
+  margin: 0 0 5px;
+}
+.ig-rede__desc {
+  font-size: 13px;
+  color: var(--ig-text-3);
+  margin: 0;
+}
+
+/* ---------- Agenda: card 2026.1 + lista ---------- */
+.ig-semester {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 40px 44px;
+  background: #fff;
+  border: 1px solid var(--ig-border-strong);
+}
+.ig-semester__eyebrow {
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ig-accent);
+  margin-bottom: 8px;
+}
+.ig-semester__title {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--ig-ink);
+  margin: 0 0 8px;
+  line-height: 1.1;
+}
+.ig-semester__edition {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ig-text-faint);
+  margin-bottom: 18px;
+}
+.ig-semester__desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ig-text-3);
+  margin: 0;
+}
+
+.ig-eventos {
+  max-width: 920px;
+  margin: 0 auto;
+  border-top: 2px solid var(--ig-ink);
+}
+.ig-evento {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 6px 30px;
+  padding: 26px 4px;
+  border-bottom: 1px solid var(--ig-border-strong);
+}
+.ig-evento__when {
+  font-family: var(--font-display);
+  font-size: 17px;
+  color: var(--ig-ink);
+  font-weight: 500;
+}
+.ig-evento__type {
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #a59c8a;
+  margin-top: 4px;
+}
+.ig-evento__title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--ig-ink);
+  margin: 0 0 6px;
+  line-height: 1.15;
+}
+.ig-evento__body {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--ig-text-3);
+  margin: 0;
+}
+
+/* ---------- Contato: 2 colunas ---------- */
+.ig-contato {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 44px 44px 100px;
+}
+.ig-contato__eyebrow {
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ig-accent);
+  margin-bottom: 12px;
+}
+.ig-contato__email {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ig-text-2);
+  margin: 0 0 8px;
+}
+.ig-contato__email a {
+  color: var(--ig-ink);
+  text-decoration: none;
+  border-bottom: 2px solid var(--ig-accent);
+  padding-bottom: 2px;
+}
+.ig-contato__addr {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ig-text-3);
+  margin: 18px 0 0;
+}
+.ig-contato__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1;
+  color: var(--ig-text-2);
+}
+.ig-contato__list li {
+  padding: 11px 0;
+  border-bottom: 1px solid var(--ig-border-strong);
+}
+.ig-contato__list li:last-child { border-bottom: none; }
+.ig-contato__list a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  transition: color 200ms ease;
+}
+.ig-contato__list a:hover { color: var(--ig-accent); }
+.ig-contato__list .ig-arrow { color: var(--ig-text-faint); }
+.ig-contato__list a:hover .ig-arrow { color: var(--ig-accent); }
+
+/* ---------- History figure (O Grupo + Cooperação) ---------- */
+.ig-figure {
+  max-width: 1100px;
+  margin: 40px auto 0;
+  padding: 0 44px;
+}
+.ig-figure img {
+  width: 100%;
+  display: block;
+  border: 1px solid #d8d0c0;
+}
+.ig-figure figcaption {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--ig-text-faint);
+  margin-top: 10px;
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Footer editorial (escuro) ---------- */
+.ig-footer {
+  background: var(--ig-ink);
+  color: #aeb7c0;
+}
+.ig-footer__top {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 54px 44px 38px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.ig-footer__brand {
+  max-width: 430px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.ig-footer__brand img { width: 34px; height: 34px; object-fit: contain; }
+.ig-footer__brand-text {
+  font-family: var(--font-display);
+  font-size: 21px;
+  color: var(--color-bg);
+}
+.ig-footer__desc {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #7e8893;
+  margin: 0;
+}
+.ig-footer__cols {
+  display: flex;
+  gap: 54px;
+  flex-wrap: wrap;
+}
+.ig-footer__col h4 {
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ig-accent);
+  margin: 0 0 14px;
+  font-weight: 600;
+}
+.ig-footer__col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 2.1;
+}
+.ig-footer__col a {
+  color: #aeb7c0;
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+.ig-footer__col a:hover { color: var(--color-bg); }
+.ig-footer__bar {
+  border-top: 1px solid rgba(174, 183, 192, 0.16);
+}
+.ig-footer__bar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 44px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 11.5px;
+  color: #6d7782;
+}
+
+/* ---------- Responsive overrides (breakpoint 860/460) ---------- */
+@media (max-width: 860px) {
+  .ig-hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 48px 24px 52px;
+  }
+  .ig-marcos { grid-template-columns: 1fr; }
+  .ig-marco { border-right: none; }
+  .ig-canon, .ig-papeis, .ig-traj, .ig-prod, .ig-eventos, .ig-rede {
+    grid-template-columns: 1fr;
+    border-left: none;
+  }
+  .ig-canon__row, .ig-papel, .ig-traj__item, .ig-prod__row, .ig-evento, .ig-rede__cell {
+    border-right: none;
+  }
+  .ig-eixos { grid-template-columns: 1fr 1fr; }
+  .ig-traj, .ig-rede { grid-template-columns: 1fr 1fr; }
+  .ig-section { padding: 48px 24px 56px; }
+  .ig-section--bleed { padding-left: 24px; padding-right: 24px; }
+  .ig-page { padding: 52px 24px 0; }
+  .ig-lead, .ig-prose { padding: 0 24px; }
+  .ig-figure { padding: 0 24px; }
+  .ig-canon { padding: 0 24px; }
+  .ig-semester { padding: 30px 24px; margin: 0 24px; }
+  .ig-teaser {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 26px;
+    gap: 24px;
+    margin: 52px 24px 56px;
+  }
+  .ig-photobreak { height: 440px; }
+  .ig-contato { grid-template-columns: 1fr; gap: 36px; padding: 36px 24px 80px; }
+  .ig-footer__top { padding: 44px 24px 30px; }
+  .ig-footer__bar-inner { padding: 16px 24px; }
+}
+@media (max-width: 460px) {
+  .ig-eixos, .ig-traj, .ig-rede { grid-template-columns: 1fr; }
+  .ig-marco { padding: 22px 18px 24px; }
+  .ig-hero__title { font-size: clamp(2.6rem, 9vw, 3.6rem); }
+  .ig-photobreak { height: 360px; }
+}
+
+/* ---------- Header premium (premium 8-item nav) ---------- */
+.header__tagline {
+  font-family: 'Inter', sans-serif;
+  font-size: 8.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #9a9384;
+  font-weight: 500;
+}
+.header__inner { gap: 18px; }
+.nav--premium {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  letter-spacing: 0.035em;
+  white-space: nowrap;
+}
+.nav--premium .nav__link {
+  font-size: 11.5px;
+  letter-spacing: 0.035em;
+  font-weight: 500;
+  color: #3d4650;
+  padding: 8px 10px;
+  border-radius: 0;
+  background: transparent;
+  text-transform: none;
+}
+.nav--premium .nav__link:hover,
+.nav--premium .nav__link--active {
+  color: var(--ig-ink);
+  background: transparent;
+}
+.nav--premium .nav__link--biblio {
+  color: var(--ig-accent);
+  font-weight: 600;
+  margin-left: 4px;
+}
+.nav--premium .nav__link--biblio:hover { color: var(--ig-ink); }
+
+.lang-switch {
+  display: flex;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+  align-items: center;
+  flex-shrink: 0;
+}
+.lang-switch__btn {
+  background: none;
+  border: none;
+  color: #9a9384;
+  padding: 4px 2px;
+  cursor: pointer;
+  font: inherit;
+  letter-spacing: inherit;
+  transition: color 200ms ease;
+}
+.lang-switch__btn:hover { color: var(--ig-ink); }
+.lang-switch__btn.is-active { color: var(--ig-accent); font-weight: 700; }
+
+.lang-switch--mobile {
+  margin-top: var(--space-6);
+  gap: 18px;
+  font-size: 13px;
+  justify-content: center;
+}
+
+@media (max-width: 1020px) {
+  .nav--premium, .lang-switch { display: none; }
+  .hamburger { display: flex; }
+}
+
+/* ---------- Mobile nav refinada (premium) ---------- */
+.mobile-nav__link {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ig-ink);
+  text-decoration: none;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--ig-border);
+  width: 100%;
+  text-align: center;
+  letter-spacing: 0.02em;
+  display: block;
+}
+.mobile-nav__link:last-of-type { border-bottom: none; }
+.mobile-nav__link--biblio {
+  color: var(--ig-accent);
+  font-weight: 600;
+  margin-top: var(--space-4);
+}
+
+/* ---------- Page-header align with new hifi ---------- */
+.page-header {
+  padding: 72px 44px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.page-header__title {
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  max-width: 920px;
+}
+@media (max-width: 860px) {
+  .page-header { padding: 52px 24px 0; }
+}

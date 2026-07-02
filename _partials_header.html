@@ -1,0 +1,57 @@
+<!--
+  Ius Gentium — Header compartilhado.
+  Incluído verbatim em todas as páginas via copy/paste. Para sincronizar
+  uma atualização, edite _partials_header.html e replique.
+  Estrutura: brand · nav (8 itens) · link Biblioteca · lang switcher · hamburger.
+-->
+<header class="header" role="banner">
+  <div class="header__inner">
+    <a href="index.html" class="header__logo" aria-label="Ius Gentium — Página Inicial">
+      <img src="img/just-emblema.png" alt="" width="40" height="40" style="height:40px;width:40px;object-fit:contain;">
+      <span class="header__logo-text">Ius Gentium<br><span class="header__tagline">UFSC · Direito Internacional</span></span>
+    </a>
+
+    <nav class="nav nav--premium" role="navigation" aria-label="Navegação principal">
+      <a href="index.html"     class="nav__link" data-nav="inicio">Início</a>
+      <a href="sobre.html"     class="nav__link" data-nav="grupo">O Grupo</a>
+      <a href="pessoas.html"   class="nav__link" data-nav="geracoes">Gerações</a>
+      <a href="pesquisa.html"  class="nav__link" data-nav="pesquisa">Pesquisa</a>
+      <a href="producao.html"  class="nav__link" data-nav="producao">Produção</a>
+      <a href="cooperacao.html" class="nav__link" data-nav="cooperacao">Cooperação</a>
+      <a href="eventos.html"   class="nav__link" data-nav="agenda">Agenda</a>
+      <a href="contato.html"   class="nav__link" data-nav="contato">Contato</a>
+      <a href="biblioteca.html" class="nav__link nav__link--biblio" data-nav="biblioteca">Biblioteca</a>
+    </nav>
+
+    <div class="lang-switch" role="group" aria-label="Idioma">
+      <button type="button" class="lang-switch__btn is-active" data-lang="pt" aria-pressed="true">PT</button>
+      <button type="button" class="lang-switch__btn" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" class="lang-switch__btn" data-lang="fr" aria-pressed="false">FR</button>
+      <button type="button" class="lang-switch__btn" data-lang="it" aria-pressed="false">IT</button>
+    </div>
+
+    <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-nav" role="navigation" aria-label="Navegação mobile">
+  <a href="index.html"      class="mobile-nav__link">Início</a>
+  <a href="sobre.html"      class="mobile-nav__link">O Grupo</a>
+  <a href="pessoas.html"    class="mobile-nav__link">Gerações</a>
+  <a href="pesquisa.html"   class="mobile-nav__link">Pesquisa</a>
+  <a href="producao.html"   class="mobile-nav__link">Produção</a>
+  <a href="cooperacao.html" class="mobile-nav__link">Cooperação</a>
+  <a href="eventos.html"    class="mobile-nav__link">Agenda</a>
+  <a href="contato.html"    class="mobile-nav__link">Contato</a>
+  <a href="biblioteca.html" class="mobile-nav__link mobile-nav__link--biblio">Biblioteca</a>
+  <div class="lang-switch lang-switch--mobile" role="group" aria-label="Idioma">
+    <button type="button" class="lang-switch__btn is-active" data-lang="pt">PT</button>
+    <button type="button" class="lang-switch__btn" data-lang="en">EN</button>
+    <button type="button" class="lang-switch__btn" data-lang="fr">FR</button>
+    <button type="button" class="lang-switch__btn" data-lang="it">IT</button>
+  </div>
+</div>
