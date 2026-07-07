@@ -43,9 +43,9 @@ jobs:
     # 5. Salva as alterações (os novos Markdowns) de volta no seu repositório
     - name: Commitar e Commitar Alterações
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "Antigravity Bot"
-        git add site_producao/\*.md
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add "site_producao/*.md"
         
         # Só commita se houver arquivos novos para evitar quebrar o fluxo
         git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Automação: Catálogo de Produção Atualizado via Gemini" && git push)

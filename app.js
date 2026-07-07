@@ -450,9 +450,10 @@
     'producao.html': 'producao',
     'cooperacao.html': 'cooperacao',
     'eventos.html': 'agenda',
-    'contato.html': 'contato'
+    'contato.html': 'contato',
+    'biblioteca.html': 'biblioteca'
   };
-  const activeKey = map[current] || 'inicio';
+  const activeKey = map[current];
   document.querySelectorAll('.nav__link[data-nav]').forEach(a => {
     if (a.getAttribute('data-nav') === activeKey) a.classList.add('nav__link--active');
   });

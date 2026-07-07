@@ -35,7 +35,7 @@ jobs:
             -name "*.css" -o \
             -name "*.js" -o \
             -name "CNAME" \
-          \) -exec cp {} _site/ \;
+          \) ! -name "_partials_*.html" -exec cp {} _site/ \;
 
           if [ -d img ]; then
             cp -R img _site/img
