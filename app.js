@@ -4,6 +4,55 @@
   'use strict';
 
   /* ========================================
+     NAV INJECTION — link "Anúncios" em todas as páginas
+     (evita editar cada HTML; a página anuncios.html já o tem)
+     ======================================== */
+  const isAnunciosPage = /anuncios\.html$/.test(window.location.pathname);
+
+  const mainNav = document.querySelector('.nav');
+  if (mainNav && !mainNav.querySelector('a[href="anuncios.html"]')) {
+    const anunciosLink = document.createElement('a');
+    anunciosLink.href = 'anuncios.html';
+    anunciosLink.className = 'nav__link' + (isAnunciosPage ? ' nav__link--active' : '');
+    anunciosLink.textContent = 'Anúncios';
+    const eventosLink = mainNav.querySelector('a[href="eventos.html"]');
+    if (eventosLink) {
+      eventosLink.after(anunciosLink);
+    } else {
+      mainNav.appendChild(anunciosLink);
+    }
+  }
+
+  const mobileNavEl = document.querySelector('.mobile-nav');
+  if (mobileNavEl && !mobileNavEl.querySelector('a[href="anuncios.html"]')) {
+    const anunciosMobile = document.createElement('a');
+    anunciosMobile.href = 'anuncios.html';
+    anunciosMobile.className = 'mobile-nav__link';
+    anunciosMobile.textContent = 'Anúncios';
+    const eventosMobile = mobileNavEl.querySelector('a[href="eventos.html"]');
+    if (eventosMobile) {
+      eventosMobile.after(anunciosMobile);
+    } else {
+      mobileNavEl.appendChild(anunciosMobile);
+    }
+  }
+
+  const footerLinks = document.querySelector('.footer__links');
+  if (footerLinks && !footerLinks.querySelector('a[href="anuncios.html"]')) {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = 'anuncios.html';
+    a.textContent = 'Anúncios';
+    li.appendChild(a);
+    const eventosItem = footerLinks.querySelector('a[href="eventos.html"]');
+    if (eventosItem && eventosItem.parentElement) {
+      eventosItem.parentElement.after(li);
+    } else {
+      footerLinks.appendChild(li);
+    }
+  }
+
+  /* ========================================
      MOBILE MENU TOGGLE
      ======================================== */
   const hamburger = document.querySelector('.hamburger');
