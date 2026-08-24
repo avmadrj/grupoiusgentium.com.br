@@ -1,48 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cooperação — Ius Gentium | UFSC</title>
+  <meta name="description" content="Rede de cooperação internacional do Ius Gentium, centrada nas parcerias acadêmicas do Prof. Dr. Arno Dal Ri Júnior.">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cooperação — Ius Gentium | UFSC</title>
-<meta name="description" content="Parcerias e cooperação internacional do Ius Gentium com universidades e centros de pesquisa ao redor do mundo.">
-
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- Styles -->
-<link rel="stylesheet" href="base.css">
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Skip Link -->
 <a href="#main" class="skip-link">Ir para conteúdo principal</a>
 
-<!-- Header -->
+<!--
+  Ius Gentium — Header compartilhado.
+  Incluído verbatim em todas as páginas via copy/paste. Para sincronizar
+  uma atualização, edite _partials_header.html e replique.
+  Estrutura: brand · nav (8 itens) · link Biblioteca · lang switcher · hamburger.
+-->
 <header class="header" role="banner">
   <div class="header__inner">
-    <a href="index.html" class="header__logo" aria-label="Ius Gentium - Página Inicial" style="display:flex;align-items:center;gap:8px;text-decoration:none;">
-      <img src="img/logo-48.jpg" alt="Ius Gentium" style="height:40px;width:40px;border-radius:4px;">
-      <span class="header__logo-text" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;font-weight:600;color:#003B70;line-height:1.2;">Ius Gentium<br><span style="font-family:'Inter',sans-serif;font-size:7.5px;color:#666;letter-spacing:0.08em;font-weight:400;">UFSC · DIREITO INTERNACIONAL</span></span>
+    <a href="index.html" class="header__logo" aria-label="Ius Gentium — Página Inicial">
+      <img src="img/just-emblema.png" alt="" width="40" height="40" style="height:40px;width:40px;object-fit:contain;">
+      <span class="header__logo-text">Ius Gentium<br><span class="header__tagline">UFSC · Direito Internacional</span></span>
     </a>
 
-    <nav class="nav" role="navigation" aria-label="Navegação principal">
-      <a href="index.html" class="nav__link">Início</a>
-      <a href="sobre.html" class="nav__link">O Grupo</a>
-      <a href="pessoas.html" class="nav__link">Pessoas</a>
-      <a href="pesquisa.html" class="nav__link">Pesquisa</a>
-      <a href="projetos.html" class="nav__link">Projetos</a>
-      <a href="producao.html" class="nav__link">Produção</a>
-      <a href="eventos.html" class="nav__link">Eventos</a>
-      <a href="cooperacao.html" class="nav__link nav__link--active">Cooperação</a>
-      <a href="links.html" class="nav__link">Links</a>
-      <a href="biblioteca.html" class="nav__link">Biblioteca</a>
-      <a href="contato.html" class="nav__link">Contato</a>
+    <nav class="nav nav--premium" role="navigation" aria-label="Navegação principal">
+      <a href="index.html"     class="nav__link" data-nav="inicio">Início</a>
+      <a href="sobre.html"     class="nav__link" data-nav="grupo">O Grupo</a>
+      <a href="pessoas.html"   class="nav__link" data-nav="geracoes">Gerações</a>
+      <a href="pesquisa.html"  class="nav__link" data-nav="pesquisa">Pesquisa</a>
+      <a href="producao.html"  class="nav__link" data-nav="producao">Produção</a>
+      <a href="cooperacao.html" class="nav__link" data-nav="cooperacao">Cooperação</a>
+      <a href="eventos.html"   class="nav__link" data-nav="agenda">Agenda</a>
+      <a href="contato.html"   class="nav__link" data-nav="contato">Contato</a>
+      <a href="biblioteca.html" class="nav__link nav__link--biblio" data-nav="biblioteca">Biblioteca</a>
     </nav>
+
+    <div class="lang-switch" role="group" aria-label="Idioma">
+      <button type="button" class="lang-switch__btn is-active" data-lang="pt" aria-pressed="true">PT</button>
+      <button type="button" class="lang-switch__btn" data-lang="en" aria-pressed="false">EN</button>
+      <button type="button" class="lang-switch__btn" data-lang="fr" aria-pressed="false">FR</button>
+      <button type="button" class="lang-switch__btn" data-lang="it" aria-pressed="false">IT</button>
+    </div>
 
     <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">
       <span class="hamburger__line"></span>
@@ -52,230 +57,118 @@
   </div>
 </header>
 
-<!-- Mobile Navigation -->
 <div class="mobile-nav" role="navigation" aria-label="Navegação mobile">
-  <a href="index.html" class="mobile-nav__link">Início</a>
-  <a href="sobre.html" class="mobile-nav__link">O Grupo</a>
-  <a href="pessoas.html" class="mobile-nav__link">Pessoas</a>
-  <a href="pesquisa.html" class="mobile-nav__link">Pesquisa</a>
-  <a href="projetos.html" class="mobile-nav__link">Projetos</a>
-  <a href="producao.html" class="mobile-nav__link">Produção</a>
-  <a href="eventos.html" class="mobile-nav__link">Eventos</a>
+  <a href="index.html"      class="mobile-nav__link">Início</a>
+  <a href="sobre.html"      class="mobile-nav__link">O Grupo</a>
+  <a href="pessoas.html"    class="mobile-nav__link">Gerações</a>
+  <a href="pesquisa.html"   class="mobile-nav__link">Pesquisa</a>
+  <a href="producao.html"   class="mobile-nav__link">Produção</a>
   <a href="cooperacao.html" class="mobile-nav__link">Cooperação</a>
-  <a href="links.html" class="mobile-nav__link">Links</a>
-  <a href="biblioteca.html" class="mobile-nav__link">Biblioteca</a>
-  <a href="contato.html" class="mobile-nav__link">Contato</a>
+  <a href="eventos.html"    class="mobile-nav__link">Agenda</a>
+  <a href="contato.html"    class="mobile-nav__link">Contato</a>
+  <a href="biblioteca.html" class="mobile-nav__link mobile-nav__link--biblio">Biblioteca</a>
+  <div class="lang-switch lang-switch--mobile" role="group" aria-label="Idioma">
+    <button type="button" class="lang-switch__btn is-active" data-lang="pt" aria-pressed="true">PT</button>
+    <button type="button" class="lang-switch__btn" data-lang="en" aria-pressed="false">EN</button>
+    <button type="button" class="lang-switch__btn" data-lang="fr" aria-pressed="false">FR</button>
+    <button type="button" class="lang-switch__btn" data-lang="it" aria-pressed="false">IT</button>
+  </div>
 </div>
 
-<!-- Main Content -->
 <main id="main">
+  <header class="ig-page">
+    <div class="ig-page__eyebrow">Cooperação</div>
+    <h1 class="ig-page__title">Uma rede transatlântica de pesquisa</h1>
+    <div class="ig-rule"></div>
+  </header>
 
-  <!-- Page Header -->
-  <section class="page-header">
-    <div class="container">
-      <span class="page-header__label">Parcerias</span>
-      <h1 class="page-header__title">Cooperação Internacional</h1>
-      <hr class="page-header__line">
+  <p class="ig-lead">A cooperação internacional do Ius Gentium se estrutura a partir da trajetória acadêmica do Prof. Dr. Arno Dal Ri Júnior e de vínculos institucionais com universidades de referência na Europa.</p>
+
+  <figure class="ig-figure">
+    <img src="img/cooperation.jpg" alt="Biblioteca universitária e mesa de trabalho, evocando cooperação acadêmica internacional.">
+    <figcaption>Circulação acadêmica, co-tutelas e edição crítica como infraestrutura de pesquisa.</figcaption>
+  </figure>
+
+  <section class="ig-section" style="padding-top:46px;padding-bottom:96px;">
+    <div class="ig-rede">
+      <article class="ig-rede__cell">
+        <h2 class="ig-rede__city">Paris · Sorbonne</h2>
+        <p class="ig-rede__desc">Vínculo com o IREDIES, Instituto de Direito Internacional e Europeu da Sorbonne, ampliando a interlocução francesa em direito internacional.</p>
+      </article>
+      <article class="ig-rede__cell">
+        <h2 class="ig-rede__city">Lille</h2>
+        <p class="ig-rede__desc">Mandato de Professeur Distingué na Université de Lille, com agenda de história do direito internacional e arqueologia jurídica.</p>
+      </article>
+      <article class="ig-rede__cell">
+        <h2 class="ig-rede__city">Macerata</h2>
+        <p class="ig-rede__desc">Acordo trilateral UFSC–Macerata–CESUSC, orientado a dupla titulação, missões docentes e publicações conjuntas.</p>
+      </article>
+      <article class="ig-rede__cell">
+        <h2 class="ig-rede__city">Gent</h2>
+        <p class="ig-rede__desc">Interlocução belga em história das ciências jurídicas, marcada pela Sarton Medal recebida pelo coordenador em 2024.</p>
+      </article>
+      <article class="ig-rede__cell">
+        <h2 class="ig-rede__city">Padova · Bocconi</h2>
+        <p class="ig-rede__desc">Matriz italiana de formação e cooperação, com continuidade em orientação, seminários doutorais e publicações comparadas.</p>
+      </article>
+      <article class="ig-rede__cell">
+        <h2 class="ig-rede__city">Firenze · Milano</h2>
+        <p class="ig-rede__desc">Diálogo com escolas italianas de história do direito, direito penal internacional e teoria geral do Estado.</p>
+      </article>
     </div>
   </section>
-
-  <!-- Introduction -->
-  <section class="section">
-    <div class="container">
-      <div class="text-center reveal">
-        <span class="section-label">Rede Global</span>
-        <h2 class="section-title">Instituições Parceiras</h2>
-        <hr class="gold-line gold-line--center">
-        <p class="section-desc mx-auto">
-          O Ius Gentium mantém parcerias acadêmicas com universidades de referência na Europa e na América Latina, 
-          promovendo intercâmbio de pesquisadores, coautorias e eventos científicos conjuntos.
-        </p>
-      </div>
-
-      <div class="partner-grid reveal-stagger">
-
-        <article class="partner-card card">
-          <div class="partner-card__flag">🇫🇷</div>
-          <h3 class="partner-card__name">Université Paris 1 Panthéon–Sorbonne (IREDIES)</h3>
-          <span class="partner-card__country">França · desde 2026</span>
-          <p class="partner-card__desc">
-            Em junho de 2026 o coordenador foi admitido como <em>Membre Associé</em> do Institut de Recherche en Droit International et Européen de la Sorbonne (IREDIES). Primeiro do PPGD/UFSC integrado ao instituto parisiense, abrindo curso para co-tutelas, missões e publicações conjuntas com a tradição francesa de direito internacional.
-          </p>
-        </article>
-
-        <article class="partner-card card">
-          <div class="partner-card__flag">🇫🇷</div>
-          <h3 class="partner-card__name">Université de Lille</h3>
-          <span class="partner-card__country">França · 2025–2029</span>
-          <p class="partner-card__desc">
-            Em março de 2025 o coordenador foi nomeado <em>Professeur Distingué</em> da Université de Lille por decreto DGDRI-2025-02 (mandato quadrienal). A nomeação instala uma cátedra rotativa de história do direito internacional e fomenta o eixo Lille–Florianópolis em arqueologia jurídica.
-          </p>
-        </article>
-
-        <article class="partner-card card">
-          <div class="partner-card__flag">🇮🇹</div>
-          <h3 class="partner-card__name">Università degli Studi di Padova</h3>
-          <span class="partner-card__country">Itália</span>
-          <p class="partner-card__desc">
-            Cooperação histórica consolidada desde a formação do coordenador em Pádua (1999). Inclui intercâmbio docente, cotutela de teses, doutorado-sanduíche e organização conjunta de congressos. É também a instituição de doutoramento da Prof. Aline Beltrame de Moura.
-          </p>
-        </article>
-
-        <article class="partner-card card">
-          <div class="partner-card__flag">🇮🇹</div>
-          <h3 class="partner-card__name">Università Bocconi (Milano)</h3>
-          <span class="partner-card__country">Itália</span>
-          <p class="partner-card__desc">
-            Instituição de doutoramento (2003) do coordenador, sob orientação da escola italiana de direito internacional. Cooperações em pesquisa, seminários doutorais e publicações comparadas.
-          </p>
-        </article>
-
-        <article class="partner-card card">
-          <div class="partner-card__flag">🇮🇹</div>
-          <h3 class="partner-card__name">Università degli Studi di Milano Statale</h3>
-          <span class="partner-card__country">Itália</span>
-          <p class="partner-card__desc">
-            Cooperação em história do direito penal internacional e teoria geral do Estado, com participação em projetos editoriais e congressos da escola lombarda.
-          </p>
-        </article>
-
-        <article class="partner-card card">
-          <div class="partner-card__flag">🇮🇹</div>
-          <h3 class="partner-card__name">Università degli Studi di Firenze</h3>
-          <span class="partner-card__country">Itália</span>
-          <p class="partner-card__desc">
-            Diálogo direto com a escola florentina de história do direito (Paolo Grossi, Pietro Costa). Medalha Florentina recebida pelo coordenador em 2007. É a instituição de doutoramento do Prof. Ricardo Sontag (UFMG).
-          </p>
-        </article>
-
-        <article class="partner-card card">
-          <div class="partner-card__flag">🇮🇹</div>
-          <h3 class="partner-card__name">Università di Macerata</h3>
-          <span class="partner-card__country">Itália · acordo 2024–2029</span>
-          <p class="partner-card__desc">
-            <em>Dipartimento di Giurisprudenza</em>, distinguido como Dipartimento di Eccellenza MUR. Acordo trilateral UFSC–Macerata–CESUSC firmado em 2024 com Paolo Palchetti e Luigi Lacchè. É a instituição de doutoramento (co-tutela) dos profs. Lucas Carlos Lima e Diego Nunes.
-          </p>
-        </article>
-
-        <article class="partner-card card">
-          <div class="partner-card__flag">🇧🇪</div>
-          <h3 class="partner-card__name">Universiteit Gent (UGent)</h3>
-          <span class="partner-card__country">Bélgica · desde 2019</span>
-          <p class="partner-card__desc">
-            Pós-doutorado do coordenador em 2019–20 e <strong>Sarton Medal</strong> recebida em dezembro de 2024 — a mais antiga distinção belga em história das ciências, conferida pela primeira vez a um jurista latino-americano. Cooperação em história conceitual do direito internacional com Georges Martyn.
-          </p>
-        </article>
-
-        <article class="partner-card card">
-          <div class="partner-card__flag">🇪🇸</div>
-          <h3 class="partner-card__name">Universidad de Alcalá (UAH)</h3>
-          <span class="partner-card__country">Espanha</span>
-          <p class="partner-card__desc">
-            Cooperação em integração regional e direito comparado, com atenção aos modelos europeus de construção supranacional e à sua recepção no Mercosul.
-          </p>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Synoptic Table -->
-  <section class="section section--alt">
-    <div class="container container--default">
-      <div class="text-center reveal">
-        <span class="section-label">Visão sinótica</span>
-        <h2 class="section-title">Acordos e Vínculos Institucionais</h2>
-        <hr class="gold-line gold-line--center">
-      </div>
-
-      <div class="card" style="padding:var(--space-6);margin-top:var(--space-10);overflow-x:auto;">
-        <table style="width:100%;border-collapse:collapse;font-family:var(--font-body);font-size:var(--text-sm);">
-          <thead>
-            <tr style="border-bottom:2px solid var(--color-academic-gold);">
-              <th style="text-align:left;padding:var(--space-3);font-family:var(--font-display);font-size:var(--text-base);color:var(--color-primary);">Instituição</th>
-              <th style="text-align:left;padding:var(--space-3);font-family:var(--font-display);font-size:var(--text-base);color:var(--color-primary);">País</th>
-              <th style="text-align:left;padding:var(--space-3);font-family:var(--font-display);font-size:var(--text-base);color:var(--color-primary);">Modalidade</th>
-              <th style="text-align:left;padding:var(--space-3);font-family:var(--font-display);font-size:var(--text-base);color:var(--color-primary);">Período</th>
-            </tr>
-          </thead>
-          <tbody style="color:var(--color-text-muted);">
-            <tr style="border-bottom:1px solid var(--color-divider);"><td style="padding:var(--space-3);">IREDIES / Sorbonne</td><td style="padding:var(--space-3);">França</td><td style="padding:var(--space-3);">Membre Associé</td><td style="padding:var(--space-3);">2026–</td></tr>
-            <tr style="border-bottom:1px solid var(--color-divider);"><td style="padding:var(--space-3);">Université de Lille</td><td style="padding:var(--space-3);">França</td><td style="padding:var(--space-3);">Professeur Distingué (decreto DGDRI-2025-02)</td><td style="padding:var(--space-3);">2025–2029</td></tr>
-            <tr style="border-bottom:1px solid var(--color-divider);"><td style="padding:var(--space-3);">Università di Macerata</td><td style="padding:var(--space-3);">Itália</td><td style="padding:var(--space-3);">Acordo trilateral UFSC–Macerata–CESUSC</td><td style="padding:var(--space-3);">2024–2029</td></tr>
-            <tr style="border-bottom:1px solid var(--color-divider);"><td style="padding:var(--space-3);">Universiteit Gent</td><td style="padding:var(--space-3);">Bélgica</td><td style="padding:var(--space-3);">Sarton Medal (2024) · pós-doc 2019–20</td><td style="padding:var(--space-3);">2019–</td></tr>
-            <tr style="border-bottom:1px solid var(--color-divider);"><td style="padding:var(--space-3);">Padova · Bocconi · Firenze · Milano</td><td style="padding:var(--space-3);">Itália</td><td style="padding:var(--space-3);">Cooperações estruturais (co-tutelas, publicações)</td><td style="padding:var(--space-3);">2003–</td></tr>
-            <tr><td style="padding:var(--space-3);">Universidad de Alcalá</td><td style="padding:var(--space-3);">Espanha</td><td style="padding:var(--space-3);">Cooperação em integração regional</td><td style="padding:var(--space-3);">vigente</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p style="margin-top:var(--space-6);font-family:var(--font-body);font-size:var(--text-xs);color:var(--color-text-faint);text-align:center;">
-        Fontes: <a href="https://www.ugent.be/ge/en/research/sarton" target="_blank" rel="noopener" style="color:var(--color-prestige);">UGent — Sarton Lectures</a> · <a href="https://giurisprudenza.unimc.it/it/dipartimento/dipartimento-di-eccellenza/RichiestaPalchettiLacchiniziativeaccordi.pdf" target="_blank" rel="noopener" style="color:var(--color-prestige);">Macerata</a> · <a href="http://lattes.cnpq.br/2020985889273319" target="_blank" rel="noopener" style="color:var(--color-prestige);">Lattes do coordenador</a>
-      </p>
-    </div>
-  </section>
-
 </main>
 
-<!-- Footer -->
-<footer class="footer" role="contentinfo">
-  <div class="container">
-    <div class="footer__grid">
-      <div>
-        <a href="index.html" class="header__logo" style="color:#fff;text-decoration:none;display:flex;align-items:center;gap:8px;">
-          <img src="img/logo-48.jpg" alt="Ius Gentium" style="height:36px;width:36px;border-radius:4px;">
-          <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;font-weight:600;color:#fff;">Ius Gentium</span>
-        </a>
-        <p class="footer__brand-desc">
-          Grupo de Pesquisa em Direito Internacional Público vinculado à Universidade Federal de Santa Catarina (UFSC) 
-          e ao Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq).
-        </p>
+<!--
+  Ius Gentium — Footer editorial compartilhado.
+  Incluído verbatim em todas as páginas. Para sincronizar uma atualização,
+  edite _partials_footer.html e replique.
+-->
+<footer class="ig-footer" role="contentinfo">
+  <div class="ig-footer__top">
+    <div>
+      <div class="ig-footer__brand">
+        <img src="img/just-emblema.png" alt="" width="34" height="34">
+        <span class="ig-footer__brand-text">Ius Gentium</span>
       </div>
-      <div>
-        <h3 class="footer__title">Links Rápidos</h3>
-        <ul class="footer__links" role="list">
-          <li><a href="sobre.html">O Grupo</a></li>
-          <li><a href="pessoas.html">Pessoas</a></li>
-          <li><a href="pesquisa.html">Pesquisa</a></li>
-          <li><a href="producao.html">Produção</a></li>
-          <li><a href="eventos.html">Eventos</a></li>
-          <li><a href="contato.html">Contato</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="footer__title">Redes Sociais</h3>
-        <div class="footer__social">
-          <a href="https://instagram.com/iusgentiumufsc" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
-          </a>
-          <a href="https://facebook.com/iusgentiumufsc" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Facebook">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-          </a>
-          <a href="https://linkedin.com/company/iusgentiumufsc" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
-          <a href="https://youtube.com/@iusgentiumufsc" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="YouTube">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#fff"/></svg>
-          </a>
-        </div>
-        <p class="footer__support">Apoio Institucional: UFSC</p>
-      </div>
+      <p class="ig-footer__desc">
+        Grupo de Pesquisa em Direito Internacional Público vinculado à Universidade Federal de Santa Catarina (UFSC) e ao Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq). Coordenado pelo Prof. Dr. Arno Dal Ri Júnior.
+      </p>
     </div>
 
-    <div class="footer__bottom">
-      <p class="footer__copyright">© 2026 Ius Gentium - UFSC. Todos os direitos reservados.</p>
+    <div class="ig-footer__cols">
+      <div class="ig-footer__col">
+        <h4>Navegação</h4>
+        <ul role="list">
+          <li><a href="sobre.html">O Grupo</a></li>
+          <li><a href="pessoas.html">Gerações</a></li>
+          <li><a href="pesquisa.html">Pesquisa</a></li>
+          <li><a href="producao.html">Produção</a></li>
+          <li><a href="cooperacao.html">Cooperação</a></li>
+          <li><a href="eventos.html">Agenda</a></li>
+        </ul>
+      </div>
+      <div class="ig-footer__col">
+        <h4>Recursos</h4>
+        <ul role="list">
+          <li><a href="biblioteca.html">Biblioteca</a></li>
+          <li><a href="https://biblioteca.iusgentium.ufsc.br" target="_blank" rel="noopener">Acervo digital externo</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="https://dgp.cnpq.br" target="_blank" rel="noopener">Diretório CNPq</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="ig-footer__bar">
+    <div class="ig-footer__bar-inner">
+      <span>© 2026 Ius Gentium — International Law UFSC/CNPq.</span>
+      <span>grupoiusgentium@gmail.com</span>
     </div>
   </div>
 </footer>
 
-<!-- Back to Top -->
-<button class="back-to-top" aria-label="Voltar ao topo">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <polyline points="18 15 12 9 6 15"/>
-  </svg>
-</button>
-
+<button class="back-to-top" aria-label="Voltar ao topo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg></button>
 <script src="app.js"></script>
-<script type="module" src="firebase-config.js"></script>
 </body>
 </html>

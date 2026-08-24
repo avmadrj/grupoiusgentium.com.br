@@ -463,3 +463,74 @@
   });
 
 })();
+
+/* ========================================
+   IUS GENTIUM HIFI APPEND
+   - Crossfade da placa Justitia
+   - Ativar item de nav da página atual
+   - Lang switcher (placeholder, PT only por enquanto)
+   ======================================== */
+(function () {
+  'use strict';
+
+  // 1. Crossfade Justitia plate (3 layers, 4200ms cycle)
+  const plate = document.querySelector('.ig-plate');
+  if (plate) {
+    const layers = plate.querySelectorAll('.ig-plate__layer');
+    if (layers.length >= 2) {
+      let idx = 0;
+      layers[0].classList.add('is-active');
+      setInterval(() => {
+        layers[idx].classList.remove('is-active');
+        idx = (idx + 1) % layers.length;
+        layers[idx].classList.add('is-active');
+      }, 4200);
+    }
+  }
+
+  // 2. Marcar nav atual
+  const current = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  const map = {
+    'index.html': 'inicio',
+    '': 'inicio',
+    'sobre.html': 'grupo',
+    'pessoas.html': 'geracoes',
+    'pesquisa.html': 'pesquisa',
+    'producao.html': 'producao',
+    'cooperacao.html': 'cooperacao',
+    'eventos.html': 'agenda',
+    'contato.html': 'contato',
+    'biblioteca.html': 'biblioteca'
+  };
+  const activeKey = map[current];
+  document.querySelectorAll('.nav__link[data-nav]').forEach(a => {
+    if (a.getAttribute('data-nav') === activeKey) a.classList.add('nav__link--active');
+  });
+  document.querySelectorAll('.mobile-nav__link').forEach(a => {
+    const href = (a.getAttribute('href') || '').toLowerCase();
+    if (href === current) a.classList.add('mobile-nav__link--active');
+  });
+
+  // 3. Lang switcher — UI pronta, troca o botão ativo. Conteúdo i18n real
+  //    entra em uma próxima fase; mantemos PT completo por enquanto.
+  document.querySelectorAll('.lang-switch__btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const lang = btn.dataset.lang;
+      if (lang === 'pt') return; // PT já é o conteúdo real
+      btn.parentNode.querySelectorAll('.lang-switch__btn').forEach(b => {
+        b.classList.remove('is-active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      btn.classList.add('is-active');
+      btn.setAttribute('aria-pressed', 'true');
+      // Notifica visitantes que EN/FR/IT ainda está em revisão jurídica.
+      const note = document.createElement('div');
+      note.setAttribute('role', 'status');
+      note.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0F1A24;color:#FCFBFA;padding:10px 18px;font-family:Inter,sans-serif;font-size:13px;border:1px solid #BFA37A;z-index:200;letter-spacing:0.02em;';
+      note.textContent = 'EN / FR / IT em revisão jurídica. Conteúdo em português por enquanto.';
+      document.body.appendChild(note);
+      setTimeout(() => note.remove(), 3500);
+    });
+  });
+})();
